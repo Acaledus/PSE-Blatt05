@@ -8,8 +8,9 @@ import java.util.Scanner;
 
 /**
  * Offers various text processing methods.
- *
- * @author Florian Walcher
+ * @author Daniel Capkan, Matrikelnummer: 3325960, st156303@stud.uni-stuttgart.de
+ * @author Mario Scheich, Matrikelnummer: 3232655 , st151491@stud.uni-stuttgart.de
+ * @author Florian Walcher, Matrikelnummer: 3320185, st156818@stud.uni-stuttgart.de
  */
 public class StringAndIO {
 
@@ -88,7 +89,6 @@ public class StringAndIO {
 	 * only there for testing purpose
 	 */
 	public static void main(String[] args) {
-		System.out.println(toPigLatin("aeiou"));
 		System.out.println(toPigLatin("Meine Mutter isst gerne Fisch."));
 		System.out.println("----------------------------------------");
 		readTextAndCount("beispieltext.txt");
