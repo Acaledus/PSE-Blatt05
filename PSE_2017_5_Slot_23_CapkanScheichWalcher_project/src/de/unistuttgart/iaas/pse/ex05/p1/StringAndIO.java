@@ -1,10 +1,7 @@
 package de.unistuttgart.iaas.pse.ex05.p1;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Offers various text processing methods.
@@ -23,17 +20,26 @@ public class StringAndIO {
 	 *            absolute path)
 	 */
 	public static void readTextAndCount(String fileName) {
+		File file = new File(fileName);
 		Map<String, Integer> woerter = new HashMap<String, Integer>();
-		Scanner sc = new Scanner(fileName);
-		while(sc.hasNext()) {
-			String wort = sc.next().toLowerCase();
-			if(woerter.containsKey(sc.next())) {
-				woerter.put(wort, woerter.get(wort).intValue() + 1);
-			} else {
-				woerter.put(wort, 1);
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+			while(sc.hasNext()) {
+				String wort = sc.next().toLowerCase();
+				if(woerter.containsKey(wort)) {
+					woerter.put(wort, woerter.get(wort).intValue() + 1);
+				} else {
+					woerter.put(wort, 1);
+				}
 			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			sc.close();
 		}
-		sc.close();
+
+
 		System.out.println(woerter.toString());
 	}
 
