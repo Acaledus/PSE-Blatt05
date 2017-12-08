@@ -23,14 +23,14 @@ public class StringAndIO {
 	 *            absolute path)
 	 */
 	public static void readTextAndCount(String fileName) {
-		Map<String, Number> woerter = new HashMap<String, Number>();
+		Map<String, Integer> woerter = new HashMap<String, Integer>();
 		Scanner sc = new Scanner(fileName);
 		while(sc.hasNext()) {
 			String wort = sc.next().toLowerCase();
 			if(woerter.containsKey(sc.next())) {
 				woerter.put(wort, woerter.get(wort).intValue() + 1);
 			} else {
-				woerter.put(wort, 0); //das hier weigert sich zu funktionieren
+				woerter.put(wort, 1);
 			}
 		}
 		sc.close();
