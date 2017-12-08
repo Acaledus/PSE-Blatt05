@@ -26,10 +26,11 @@ public class StringAndIO {
 		Map<String, Number> woerter = new HashMap<String, Number>();
 		Scanner sc = new Scanner(fileName);
 		while(sc.hasNext()) {
+			String wort = sc.next().toLowerCase();
 			if(woerter.containsKey(sc.next())) {
-				woerter.put(sc.next(), woerter.get(sc.next()).intValue() + 1);
+				woerter.put(wort, woerter.get(wort).intValue() + 1);
 			} else {
-				woerter.put(sc.next(), 0);
+				woerter.put(wort, 0); //das hier weigert sich zu funktionieren
 			}
 		}
 		sc.close();
