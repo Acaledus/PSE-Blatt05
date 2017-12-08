@@ -38,9 +38,7 @@ public class StringAndIO {
 		} finally {
 			sc.close();
 		}
-
-
-		System.out.println(woerter.toString());
+		System.out.println(woerter.toString()); //Gibt die Wörter und ihre Anzahl aus.
 	}
 
 	/**
@@ -69,7 +67,8 @@ public class StringAndIO {
 			case 'Ü':
 			case 'Ä':
 				return true;
-			default: return false;
+			default:
+				return false;
 		}
 	}
 
